@@ -17,3 +17,5 @@ public class CinemaController {
 		return "cinemaInfo/cinemaList";
 	}
 }
+
+  
