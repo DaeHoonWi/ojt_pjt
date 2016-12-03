@@ -14,6 +14,6 @@ public class CinemaController {
 	@RequestMapping(value="CinemaList.do")
 	public String main(Model model) throws Exception{
 
-		return "cinemainfo/cinnemaList";
+		return "cinemaInfo/cinemaList";
 	}
 }
