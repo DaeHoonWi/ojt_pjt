@@ -1,0 +1,4 @@
+Jdbc.DriverClassName=oracle.jdbc.driver.OracleDriver
+Jdbc.Url=jdbc:oracle:thin:@localhost:1521:xe
+Jdbc.Username=scott
+Jdbc.Password=tiger
