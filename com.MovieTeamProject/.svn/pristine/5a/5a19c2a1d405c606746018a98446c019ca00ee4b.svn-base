@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Review">
+		
+	<insert id="insertReview" parameterType="com.edsk.movie.dto.ReviewDTO">
+		INSERT INTO REVIEW( R_NUM, C_NUM, M_ID, R_TITLE, R_CONTENT, R_DATE, R_COUNT, R_LIKE, R_PATH )
+		VALUES( R_NUM_SEQ.NEXTVAL, #{c_num}, #{m_id}, #{r_title}, #{r_content}, SYSDATE, 0, 0, #{r_path} )
+	</insert>
+	
+	<select id="selectReview" parameterType="java.lang.Integer" resultType="com.edsk.movie.dto.ReviewDTO">
+		SELECT * 
+		FROM REVIEW
+		WHERE R_NUM=#{r_num}
+	</select>
+	
+	<select id="selectReviewList" resultType="com.edsk.movie.dto.ReviewDTO">
+		SELECT * 
+		FROM REVIEW
+		ORDER BY R_DATE DESC
+	</select>
+	
+	<update id="updateReview" parameterType="com.edsk.movie.dto.ReviewDTO">
+		UPDATE REVIEW 
+			SET C_NUM=#{c_num}, R_TITLE=#{r_title}, R_CONTENT=#{r_content}, R_PATH=#{r_path}
+		WHERE R_NUM=#{r_num}
+	</update>
+	
+	<!-- 조회수 증가 -->
+	<update id="updateReviewR_COUNT" parameterType="java.lang.Integer">
+		UPDATE REVIEW 
+		SET R_COUNT=R_COUNT+1
+		WHERE R_NUM=#{r_num}
+	</update>
+	
+	<delete id="deleteReview" parameterType="java.lang.Integer">
+		DELETE REVIEW
+		WHERE R_NUM=#{r_num}	
+	</delete>
+
+	<!-- 추천 시  selectReviewLike, insertReviewLike, updateReviewR_Like 이 실행 -->
+	<update id="updateReviewR_Like" parameterType="java.lang.Integer">
+		UPDATE REVIEW 
+		SET R_LIKE=R_LIKE+1
+		WHERE R_NUM=#{r_num}
+	</update>
+	
+
+	
+</mapper>

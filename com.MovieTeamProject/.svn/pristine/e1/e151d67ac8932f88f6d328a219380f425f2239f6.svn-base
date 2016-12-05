@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ReviewComment">
+
+	<insert id="insertReviewComment" parameterType="com.edsk.movie.dto.ReviewCommentDTO">
+		INSERT INTO REVIEW_COMMENT( RC_NUM, R_NUM, M_ID,  RC_CONTENT, RC_DATE )
+		VALUES( RC_NUM_SEQ.NEXTVAL, #{r_num}, #{m_id}, #{rc_content}, SYSDATE )
+	</insert>
+
+	<select id="selectReviewCommentList" parameterType="java.lang.Integer" resultType="com.edsk.movie.dto.ReviewCommentDTO">
+		SELECT * 
+		FROM REVIEW_COMMENT
+		WHERE R_NUM=#{r_num}
+		ORDER BY RC_DATE ASC
+	</select>
+	
+	<update id="updateReviewComment" parameterType="com.edsk.movie.dto.ReviewCommentDTO">
+	 	UPDATE REVIEW_COMMENT
+		SET RC_CONTENT=#{rc_content}
+		WHERE M_ID=#{m_id} 
+	</update>
+
+	<delete id="deleteReviewComment" parameterType="java.lang.Integer">
+		DELETE REVIEW_COMMENT
+		WHERE RC_NUM=#{rc_num}	
+	</delete>
+
+
+</mapper>

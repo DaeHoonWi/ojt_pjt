@@ -1,0 +1,105 @@
+package com.edsk.movie.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.edsk.movie.dao.ReviewCommentDAO;
+import com.edsk.movie.dao.ReviewDAO;
+import com.edsk.movie.dao.ReviewLikeDAO;
+import com.edsk.movie.dto.ReviewCommentDTO;
+import com.edsk.movie.dto.ReviewDTO;
+import com.edsk.movie.dto.ReviewLikeDTO;
+
+@Service
+public class ReviewServiceImpl implements ReviewService {
+
+	@Autowired
+	public ReviewDAO reviewDAO;
+	
+	@Autowired
+	public ReviewCommentDAO reviewCommentDAO;
+	
+	@Autowired
+	public ReviewLikeDAO reviewLikeDAO; 
+	
+	
+	/*Review*/
+	@Override
+	public void insertReview(ReviewDTO dto) throws Exception {
+		reviewDAO.insertReview(dto);
+	}
+
+	@Override
+	public void updateReview(ReviewDTO dto) throws Exception {
+		reviewDAO.updateReview(dto);
+	}
+
+	@Override
+	public void deleteReview(int r_num) throws Exception {
+		reviewDAO.deleteReview(r_num);
+	}
+
+	@Override
+	public List<ReviewDTO> selectReviewList() throws Exception {
+		return reviewDAO.selectReviewList();
+	}
+
+	@Override
+	public ReviewDTO selectReview(int r_num) throws Exception {
+		return reviewDAO.selectReview(r_num);
+	}
+	
+	// 리뷰 조회수 증가
+	@Override
+	public void updateReviewR_COUNT(int r_num) throws Exception {
+		reviewDAO.updateReviewR_COUNT(r_num);
+	}
+
+	// 리뷰 추천수 증가
+	@Override
+	public void updateReviewR_Like(int r_num) throws Exception {
+		reviewDAO.updateReviewR_Like(r_num);
+	}
+
+	
+	/*ReviewComment*/
+	@Override
+	public void insertReviewComment(ReviewCommentDTO dto) throws Exception {
+		reviewCommentDAO.insertReviewComment(dto);
+	}
+
+	@Override
+	public void updateReviewComment(ReviewCommentDTO dto) throws Exception {
+		reviewCommentDAO.updateReviewComment(dto);
+	}
+
+	@Override
+	public void deleteReviewComment(int rc_num) throws Exception {
+		reviewCommentDAO.deleteReviewComment(rc_num);		
+	}
+
+	@Override
+	public List<ReviewCommentDTO> selectReviewCommentList(int r_num) throws Exception {
+		return reviewCommentDAO.selectReviewCommentList(r_num);
+	}
+
+	/*ReviewLike*/
+	// 해당 리뷰에 대해 추천. 
+	// return을 boolean으로 만든 이유는, return값이 true일 때에만 다음 처리(updateReviewR_Like)를 하도록 만들기 위한 것. 
+	@Override
+	public boolean insertReviewLike(ReviewLikeDTO dto) throws Exception {
+		reviewLikeDAO.insertReviewLike(dto);
+		return true;		
+	}
+
+	// 해당 리뷰글에 대한 회원의 추천 여부 확인 (0: 추천 하지 않았음. 1: 이미 추천 했음)
+	@Override
+	public int selectReviewLike(ReviewLikeDTO dto) throws Exception {
+		return reviewLikeDAO.selectReviewLike(dto);
+	}
+
+
+
+}

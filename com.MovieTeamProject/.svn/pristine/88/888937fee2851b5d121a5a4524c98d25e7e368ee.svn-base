@@ -1,0 +1,66 @@
+package com.edsk.movie.controller;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.edsk.movie.dto.ReviewDTO;
+import com.edsk.movie.dto.ReviewLikeDTO;
+import com.edsk.movie.service.ReviewService;
+
+@Controller
+public class ReviewController {
+
+	private static final Logger logger = LoggerFactory.getLogger(ReviewController.class);
+	
+	@Autowired
+	private ReviewService reviewService;
+	
+	@RequestMapping(value="Reviewlist.do")
+	public String main(Model model) throws Exception{
+		
+		logger.debug("================Reviewlist================"); 
+		
+		ReviewDTO dto = new ReviewDTO();
+		dto.setM_id("kay");
+		dto.setR_title("kay_title");
+		dto.setR_content("kay_content");
+		dto.setC_num(12);
+		dto.setR_path("path");
+		
+		reviewService.insertReview(dto);
+		
+		return "review/Reviewlist";
+	}
+	
+	@RequestMapping(value="Reviewlike.do", method={RequestMethod.GET, RequestMethod.POST})
+	public String ClickReviewLike(Model model, int r_num) throws Exception{
+		
+		//(수정할 점)session login 정보에서 m_id사용
+		String m_id = "kay"; // 로그인 아이디 임시용
+		
+		ReviewLikeDTO dto = new ReviewLikeDTO();
+		dto.setM_id(m_id);
+		dto.setR_num(r_num);
+		
+		// (수정할 점) 쿼리로 like 처리 단계를 줄일 수 없나 
+		if( reviewService.selectReviewLike(dto) > 0 ){	// 이미 추천을 한 경우 
+			if( reviewService.insertReviewLike(dto) ){
+				reviewService.updateReviewR_Like(dto.getR_num());
+			};
+		}else {
+			System.out.println("이미 추천을 했습니다."); // (수정할 점) 이 문구를 팝업창으로 띄워야함
+		};
+		
+		return "review/ReviewLike";	// (수정할 점) ajax로 사용할까 
+	}
+	
+	
+	
+	
+	
+}
