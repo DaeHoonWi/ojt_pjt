@@ -18,8 +18,8 @@
 	<insert id="writeCinema" parameterType="com.edsk.movie.dto.CinemaDTO">
 	    INSERT 		INTO CINEMA(C_NUM, COU_NUM, C_TITLE, C_RUNNINGTIME, C_SUMMARY 
 	    			, C_COUNT, C_AGE, C_ORIGINAL_FILE_NAME, C_STORED_FILE_NAME)
-	    VALUES		(C_NUM_SEQ.NEXTVAL, #{COU_NUM}, #{C_TITLE}, #{C_RUNNINGTIME}, #{C_SUMMARY}
-	    			, 0, #{C_AGE}, #{C_ORIGINAL_FILE_NAME}, #{C_STORED_FILE_NAME}, #{C_PLAYTIME})
+	    VALUES		(C_NUM_SEQ.NEXTVAL, #{couNum}, #{cTitle}, #{cRunningtime}, #{cSummary}
+	    			, 0, #{cAge}, #{cOriginalFileName}, #{cStoredFileName}, #{cPlaydate})
 	</insert>
 	<!-- INSERT END -->
 	

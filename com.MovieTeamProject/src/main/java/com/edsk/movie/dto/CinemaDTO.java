@@ -2,114 +2,114 @@ package com.edsk.movie.dto;
 
 public class CinemaDTO {
 
-	int c_num;		//영화 번호
-	int cou_num;		//나라 번호
-	String c_title;		//영화 제목
-	int c_runningtime;		//러닝타임
-	String c_summary;		//줄거리
-	int c_count;		//리뷰 수
-	String c_age;		//시청연령제한
-	String c_original_file_name;		//원본 파일명
-	String c_stored_file_name;		//저장 파일명
-	int c_playdate;		//개봉일
+	int cNum;		//영화 번호
+	int couNum;		//나라 번호
+	String cTitle;		//영화 제목
+	int cRunningtime;		//러닝타임
+	String cSummary;		//줄거리
+	int cCount;		//리뷰 수
+	String cAge;		//시청연령제한
+	String cOriginalFileName;		//원본 파일명
+	String cStoredFileName;		//저장 파일명
+	int cPlaydate;		//개봉일
 	
 	public CinemaDTO() {		//디폴트 생성자
 		// TODO Auto-generated constructor stub
 	}
 	
-	public CinemaDTO(int c_num, int cou_num, String c_title, int c_runningtime, 
-			String c_summary, int c_count, String c_age, String c_original_file_name, 
-			String c_stored_file_name, int c_playdate) {
-		this.c_num = c_num;
-		this.cou_num = cou_num;
-		this.c_title = c_title;
-		this.c_runningtime = c_runningtime;
-		this.c_summary = c_summary;
-		this.c_count = c_count;
-		this.c_age =  c_age;
-		this.c_original_file_name = c_original_file_name;
-		this.c_stored_file_name = c_stored_file_name;
-		this.c_playdate = c_playdate;
+	public CinemaDTO(int cNum, int couNum, String cTitle, int cRunningtime
+			, String cSummary, int cCount, String cAge, String cOriginalFileName
+			, String cStoredFileName, int cPlaydate) {
+		this.cNum = cNum;
+		this.couNum = couNum;
+		this.cTitle = cTitle;
+		this.cRunningtime = cRunningtime;
+		this.cSummary = cSummary;
+		this.cCount = cCount;
+		this.cAge =  cAge;
+		this.cOriginalFileName = cOriginalFileName;
+		this.cStoredFileName = cStoredFileName;
+		this.cPlaydate = cPlaydate;
 	}
 
-	public int getC_num() {
-		return c_num;
+	public int getcNum() {
+		return cNum;
 	}
 
-	public void setC_num(int c_num) {
-		this.c_num = c_num;
+	public void setcNum(int cNum) {
+		this.cNum = cNum;
 	}
 
-	public int getCou_num() {
-		return cou_num;
+	public int getcouNum() {
+		return couNum;
 	}
 
-	public void setCou_num(int cou_num) {
-		this.cou_num = cou_num;
+	public void setcouNum(int couNum) {
+		this.couNum = couNum;
 	}
 
-	public String getC_title() {
-		return c_title;
+	public String getcTitle() {
+		return cTitle;
 	}
 
-	public void setC_title(String c_title) {
-		this.c_title = c_title;
+	public void setcTitle(String cTitle) {
+		this.cTitle = cTitle;
 	}
 
-	public int getC_runningtime() {
-		return c_runningtime;
+	public int getcRunningtime() {
+		return cRunningtime;
 	}
 
-	public void setC_runningtime(int c_runningtime) {
-		this.c_runningtime = c_runningtime;
+	public void setcRunningtime(int cRunningtime) {
+		this.cRunningtime = cRunningtime;
 	}
 
-	public String getC_summary() {
-		return c_summary;
+	public String getcSummary() {
+		return cSummary;
 	}
 
-	public void setC_summary(String c_summary) {
-		this.c_summary = c_summary;
+	public void setcSummary(String cSummary) {
+		this.cSummary = cSummary;
 	}
 
-	public int getC_count() {
-		return c_count;
+	public int getcCount() {
+		return cCount;
 	}
 
-	public void setC_count(int c_count) {
-		this.c_count = c_count;
+	public void setcCount(int cCount) {
+		this.cCount = cCount;
 	}
 
-	public String getC_age() {
-		return c_age;
+	public String getcAge() {
+		return cAge;
 	}
 
-	public void setC_age(String c_age) {
-		this.c_age = c_age;
+	public void setcAge(String cAge) {
+		this.cAge = cAge;
 	}
 
-	public String getC_original_file_name() {
-		return c_original_file_name;
+	public String getcOriginalFileName() {
+		return cOriginalFileName;
 	}
 
-	public void setC_original_file_name(String c_original_file_name) {
-		this.c_original_file_name = c_original_file_name;
+	public void setcOriginalFileName(String cOriginalFileName) {
+		this.cOriginalFileName = cOriginalFileName;
 	}
 
-	public String getC_stored_file_name() {
-		return c_stored_file_name;
+	public String getcStoredFileName() {
+		return cStoredFileName;
 	}
 
-	public void setC_stored_file_name(String c_stored_file_name) {
-		this.c_stored_file_name = c_stored_file_name;
+	public void setcStoredFileName(String cStoredFileName) {
+		this.cStoredFileName = cStoredFileName;
 	}
 
-	public int getC_playdate() {
-		return c_playdate;
+	public int getcPlaydate() {
+		return cPlaydate;
 	}
 
-	public void setC_playdate(int c_playdate) {
-		this.c_playdate = c_playdate;
+	public void setcPlaydate(int cPlaydate) {
+		this.cPlaydate = cPlaydate;
 	}
 	
 	

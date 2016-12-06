@@ -25,34 +25,36 @@ public class CinemaController {
 	private static final Logger logger = LoggerFactory.getLogger(CinemaController.class);
 	
 	@Autowired
-	private CinemaService cinemaService = null;
-	
+	private CinemaService cinemaService;
 	
 	@RequestMapping(value = "cinemaList.do")
 	public String cinemaList(Model model) throws Exception {
+
 		logger.debug("================cinemaList================");
-		
+
 		List<CinemaDTO> cinemaDTO = cinemaService.selectCinemaList();
-		model.addAttribute("cinemaList", cinemaDTO);		
+		
+		model.addAttribute("cinemaList", cinemaDTO);
+		
 		return "cinemaInfo/cinemaList";
 	}
 
-	
 	@RequestMapping(value = "cinemaWriteVeiw.do")
 	public String cinemaWriteVeiw(Model model) {
+
 		logger.debug("================cinemaWriteVeiw================");
+		
 		return "cinemaInfo/cinemaWriteVeiw";
 	}
 
-	
 	@RequestMapping(value = "cinemaWrite.do")
-	public String cinemaWrite(HttpServletRequest request, Model model) {
+	public String cinemaWrite(HttpServletRequest cinemaWriteRequest, Model model) {
+
 		logger.debug("================cinemaWrite================");
-		model.addAttribute("request", request);
-		/*cinemaService.writeCinema(cinemaDTO);*/
-		/*return "redirect:cinemaInfo/cinemaList";*/
-		return "cinemaInfo/cinemaList";
+
+		model.addAttribute("request", cinemaWriteRequest);
+
+		return "redirect:cinemaInfo/cinemaList";
 	}
 
-	
 }
