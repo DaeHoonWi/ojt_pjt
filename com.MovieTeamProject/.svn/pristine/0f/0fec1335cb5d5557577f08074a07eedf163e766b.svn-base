@@ -1,0 +1,174 @@
+package com.edsk.movie.dto;
+
+import java.sql.Timestamp;
+
+public class ReviewDTO {
+
+	private int r_num;
+	private int c_num;		//cNum 이런식으로 고치기
+	private String m_id;
+	private String r_title;
+	private String r_content;
+	private Timestamp r_date;
+	private int r_count;
+	private int r_like;
+	private String r_path;
+	
+	public ReviewDTO() {
+	
+	}
+
+
+	/**
+	 * @return the r_num
+	 */
+	public int getR_num() {
+		return r_num;
+	}
+
+
+	/**
+	 * @param r_num the r_num to set
+	 */
+	public void setR_num(int r_num) {
+		this.r_num = r_num;
+	}
+
+
+	/**
+	 * @return the c_num
+	 */
+	public int getC_num() {
+		return c_num;
+	}
+
+
+	/**
+	 * @param c_num the c_num to set
+	 */
+	public void setC_num(int c_num) {
+		this.c_num = c_num;
+	}
+
+
+	/**
+	 * @return the m_id
+	 */
+	public String getM_id() {
+		return m_id;
+	}
+
+
+	/**
+	 * @param m_id the m_id to set
+	 */
+	public void setM_id(String m_id) {
+		this.m_id = m_id;
+	}
+
+
+	/**
+	 * @return the r_title
+	 */
+	public String getR_title() {
+		return r_title;
+	}
+
+
+	/**
+	 * @param r_title the r_title to set
+	 */
+	public void setR_title(String r_title) {
+		this.r_title = r_title;
+	}
+
+
+	/**
+	 * @return the r_content
+	 */
+	public String getR_content() {
+		return r_content;
+	}
+
+
+	/**
+	 * @param r_content the r_content to set
+	 */
+	public void setR_content(String r_content) {
+		this.r_content = r_content;
+	}
+
+
+	/**
+	 * @return the r_date
+	 */
+	public Timestamp getR_date() {
+		return r_date;
+	}
+
+
+	/**
+	 * @param r_date the r_date to set
+	 */
+	public void setR_date(Timestamp r_date) {
+		this.r_date = r_date;
+	}
+
+
+	/**
+	 * @return the r_count
+	 */
+	public int getR_count() {
+		return r_count;
+	}
+
+
+	/**
+	 * @param r_count the r_count to set
+	 */
+	public void setR_count(int r_count) {
+		this.r_count = r_count;
+	}
+
+
+	/**
+	 * @return the r_like
+	 */
+	public int getR_like() {
+		return r_like;
+	}
+
+
+	/**
+	 * @param r_like the r_like to set
+	 */
+	public void setR_like(int r_like) {
+		this.r_like = r_like;
+	}
+
+
+	/**
+	 * @return the r_path
+	 */
+	public String getR_path() {
+		return r_path;
+	}
+
+
+	/**
+	 * @param r_path the r_path to set
+	 */
+	public void setR_path(String r_path) {
+		this.r_path = r_path;
+	}
+
+
+	@Override
+	public String toString() {
+		return "ReviewDTO [r_num=" + r_num + ", c_num=" + c_num + ", m_id="
+				+ m_id + ", r_title=" + r_title + ", r_content=" + r_content
+				+ ", r_date=" + r_date + ", r_count=" + r_count + ", r_like="
+				+ r_like + ", r_path=" + r_path + "]";
+	}
+	
+}

@@ -1,0 +1,47 @@
+package com.edsk.movie.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+
+
+@Controller
+public class CinemaController {
+
+	
+	
+	@RequestMapping(value="CinemaList.do")
+	public String main(Model model) throws Exception{
+		
+		System.out.println("cinemaList()");
+		
+		
+		
+		return "cinemaInfo/cinemaList";
+	}
+	
+	@RequestMapping(value="WriteVeiw.do")
+	public String write_view(Model model){
+		
+		System.out.println("writeView()");
+		
+		return "cinemaInfo/write";
+	}
+	
+	@RequestMapping(value="Write.do")
+	public String write(HttpServletRequest request, Model model){
+		
+		System.out.println("write()");
+		
+		model.addAttribute("request", request);
+		
+		
+		return "redirect:cinemaInfo/cinemaList";
+		/*return "CinemaList.do";*/
+	}
+	
+	
+}

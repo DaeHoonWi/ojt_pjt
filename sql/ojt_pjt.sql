@@ -3,14 +3,37 @@ CREATE TABLE CINEMA
 	c_num                NUMBER PRIMARY KEY ,
   cou_num              NUMBER NOT NULL ,
 	c_title              VARCHAR2(200) NOT NULL ,
-	c_runningtime        NUMBER NULL ,
-	c_summary            BLOB NULL ,
-	c_count              NUMBER NOT NULL ,
+	c_runningtime        NUMBER NOT NULL ,
+	c_summary            BLOB NOT NULL ,
+	c_count              NUMBER DEFAULT 0,
 	c_age                VARCHAR2(20) NOT NULL ,
 	c_original_file_name VARCHAR2(100) NULL ,
-	c_stored_file_name   VARCHAR2(200) NULL 
+	c_stored_file_name   VARCHAR2(200) NULL ,
+  c_playtime           NUMBER DEFAULT 0
 );
 
+ALTER TABLE CINEMA
+MODIFY (c_summary CLOB);
+
+MODIFY (c_summary NOT NULL);
+
+MODIFY (c_runningtime NOT NULL);
+
+MODIFY (c_count NUMBER DEFAULT 0);
+
+ALTER TABLE CINEMA
+ADD (c_playdate NUMBER DEFAULT 0);
+
+ALTER TABLE CINEMA
+DROP COLUMN c_playdate;
+
+ALTER TABLE CINEMA
+DROP COLUMN c_summary;
+
+ALTER TABLE CINEMA
+ADD (c_summary CLOB NOT NULL);
+
+COMMIT;
 --CINEMA END
 
 

@@ -1,0 +1,34 @@
+CREATE SEQUENCE c_num_seq
+  start with 1;
+  
+--CINEMA END
+
+CREATE SEQUENCE cou_num_seq;
+
+--COUNTRY END
+
+CREATE SEQUENCE ac_num_seq;
+
+--ACTOR END
+
+CREATE SEQUENCE ac_code_seq;
+
+--ACTOR_CATEGORY END
+
+CREATE SEQUENCE g_num_seq;
+
+--GENRE END
+
+CREATE SEQUENCE gc_code_seq;
+
+--GENRE_CATEGORY END
+
+CREATE SEQUENCE d_num_seq;
+
+--DIRECTOR END
+
+CREATE SEQUENCE dc_code_seq;
+
+--DIRECTOR_CATEGORY END
+
+COMMIT;

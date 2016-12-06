@@ -14,7 +14,7 @@
 <%-- <h3> <a href="<%=cp%>/Qnalist.do">QNA게시판</a> </h3><br>
 <h3> <a href="<%=cp%>/CinemaInfolist.do">영화정보게시판</a> </h3><br> --%>
 <h3> <a href="Reviewlist.do">리뷰게시판</a> </h3><br> 
-<h3> <a href="CinemaList.do">영화정보:)</a> </h3><br> 
+<h3> <a href="cinemaList.do">영화정보:)</a> </h3><br> 
 
 
 </body>

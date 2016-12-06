@@ -4,9 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>영화 정보 목록:)</title>
 </head>
 <body>
+
+
+
+
+
+<h3> <a href="cinemaWriteVeiw.do">영화 추가</a> </h3><br> 
 
 </body>
 </html>

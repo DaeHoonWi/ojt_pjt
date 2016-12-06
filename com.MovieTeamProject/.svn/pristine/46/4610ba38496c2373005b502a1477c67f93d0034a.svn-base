@@ -1,0 +1,114 @@
+package com.edsk.movie.dao;
+
+import java.util.ArrayList;
+
+
+import com.edsk.movie.dto.CinemaDTO;
+
+public interface CinemaDAO {
+
+	/*영화 목록*/
+	public ArrayList<CinemaDTO> cinemaList() throws Exception;
+	
+	/*영화 추가*/
+	public void writeCinema(CinemaDTO dto) throws Exception;
+	
+	/*영화 상세정보 보기*/
+	public ArrayList<CinemaDTO> cinemaDetailList() throws Exception;
+	
+	/*영화 정보 삭제*/
+	
+	/*영화 정보 수정*/
+	
+	/*DataSource dataSource;
+	
+	public CinemaDAO() {
+	
+		try {
+			Context context = new InitialContext();
+			dataSource = (DataSource) context.lookup("java:comp/env/jdbc/Oracle11g");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public ArrayList<CinemaDTO> list(){
+		
+		ArrayList<CinemaDTO> dtos = new ArrayList<CinemaDTO>();
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		
+		try {
+			connection = dataSource.getConnection();
+			
+			//현재는 영화 번호 순으로 쿼리를 하지만, 개봉일 순으로 바꿔야 함.
+			String query = "select c_num, cou_num, c_title, c_runningtime, c_summary, c_count, c_age, c_original_file_name, c_stored_file_name"
+					+ "		from CINEMA order by c_num";
+			preparedStatement = connection.prepareStatement(query);
+			resultSet = preparedStatement.executeQuery();
+			
+			while (resultSet.next()) {
+				int c_num = resultSet.getInt("c_num");
+				int cou_num = resultSet.getInt("cou_num");
+				String c_title = resultSet.getString("c_title");
+				int c_runningtime = resultSet.getInt("c_runningtime");
+				String c_summary = resultSet.getString("c_summary");
+				int c_count = resultSet.getInt("c_count");
+				String c_age = resultSet.getString("c_age");
+				String c_original_file_name = resultSet.getString("c_original_file_name");
+				String c_stored_file_name = resultSet.getString("c_stored_file_name");
+				
+				CinemaDTO cinemaDTO = new CinemaDTO(c_num, cou_num, c_title, c_runningtime, c_summary, c_count, c_age, c_original_file_name, c_stored_file_name);
+				dtos.add(cinemaDTO);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(resultSet != null) resultSet.close();
+				if(preparedStatement != null) preparedStatement.close();
+				if(connection != null) connection.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+				e2.printStackTrace();
+			}
+		}
+		return dtos;
+	}
+	
+	public void write(int cou_num, String c_title, int c_runningtime,
+			String c_summary, String c_age, String c_original_file_name, String c_stored_file_name) {
+		
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		
+		try {
+			connection = dataSource.getConnection();
+			String query = "insert into CINEMA (c_num, cou_num, c_title, c_runningtime, c_summary, c_count, c_age, c_original_file_name, c_stored_file_name)"
+					+ "		values (c_num_seq.nextval, ?, ?, ?, ?, 0, ?, ?, ?)";
+			preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setInt(1, cou_num);
+			preparedStatement.setString(2, c_title);
+			preparedStatement.setInt(3, c_runningtime);
+			preparedStatement.setString(4, c_summary);
+			preparedStatement.setString(5, c_age);
+			preparedStatement.setString(6, c_original_file_name);
+			preparedStatement.setString(7, "test");
+			
+			int rn = preparedStatement.executeUpdate();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			try {
+				if(preparedStatement != null) preparedStatement.close();
+				if(connection != null) connection.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+				e2.printStackTrace();
+			}
+		}
+	}*/
+	
+}
