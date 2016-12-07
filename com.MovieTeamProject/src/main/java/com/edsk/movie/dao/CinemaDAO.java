@@ -8,7 +8,11 @@ import org.springframework.stereotype.Repository;
 
 import com.edsk.movie.dto.CinemaDTO;
 
-/*용도 모름*/
+/**
+ * @author DaeHoon Wi
+ * 
+ * DB에 접근하여 데이터를 CRUD 하는 클래스
+ */
 @Repository
 public class CinemaDAO {
 
@@ -16,11 +20,24 @@ public class CinemaDAO {
 	private SqlSession sqlSession;
 	private String ns = "Cinema."; /*ns = nameSpace*/
 	
-	public List<CinemaDTO> selectCinemaList() throws Exception{
+	
+	/**
+	 * @return
+	 * @throws Exception
+	 * 영화정보를 select 하는 메소드
+	 */
+	public List<CinemaDTO> cinemaList() throws Exception{
 		return sqlSession.selectList(ns+"selectCinemaList");
 	}
 	
+	/**
+	 * @param cinemaDTO
+	 * @return
+	 * @throws Exception
+	 * 영화정보를 insert하는 메소드
+	 */
 	public int writeCinema(CinemaDTO cinemaDTO) throws Exception{
-		return sqlSession.insert(ns+"writeCinema", cinemaDTO);
+		sqlSession.insert(ns+"writeCinema", cinemaDTO);
+		return 1;
 	}
 }

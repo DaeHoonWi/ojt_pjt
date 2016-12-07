@@ -7,6 +7,7 @@ public class CinemaDTO {
 	String cTitle;		//영화 제목
 	int cRunningtime;		//러닝타임
 	String cSummary;		//줄거리
+	
 	int cCount;		//리뷰 수
 	String cAge;		//시청연령제한
 	String cOriginalFileName;		//원본 파일명

@@ -11,22 +11,22 @@
 <body>
 
 <c:forEach items="${cinemaList}" var="dto">
-${dto.cNum} <br>
-${dto.couNum} <br>
-${dto.cTitle} <br>
-${dto.cRunningtime} <br>
-${dto.cSummary} <br>
 
-${dto.cCount} <br>
-${dto.cAge} <br>
-${dto.cOriginalFileName} <br>
-${dto.cStoredFileName} <br>
-${dto.cPlaydate} <br>
+<h1>유효값!!</h1>
 
+영화 번호	: ${dto.cNum} <br>
+국가		: ${dto.couNum} <br>
+제목		: ${dto.cTitle} <br>
+러닝타임	: ${dto.cRunningtime} 분 <br>
+줄거리		: ${dto.cSummary} <br>
+
+리뷰수		: ${dto.cCount} 개<br>
+시청연령제한: ${dto.cAge} 세 관람가<br>
+원본파일명	: ${dto.cOriginalFileName} <br>
+저장파일명	: ${dto.cStoredFileName} <br>
+개봉일		: ${dto.cPlaydate} <br>
 
 </c:forEach>
-<h5>hahaha</h5>
-
 
 <h3> <a href="cinemaWriteVeiw.do">영화 추가</a> </h3><br> 
 

@@ -12,7 +12,7 @@
 	<table>
 		<form action="cinemaWrite.do" method="post">
 			<tr>
-				<td>나라(숫자))</td>
+				<td>나라(2,3))</td>
 				<td><input type="text" name="couNum" size="50"></td>
 			</tr>
 			<tr>
