@@ -75,9 +75,7 @@ public class CinemaController {
 	public String cinemaWrite(HttpServletRequest request, Model model) throws Exception {
 		logger.debug("================cinemaWrite================");
 		cinemaService.writeCinema(request);
-		List<CinemaDTO> cinemaDTO = cinemaService.selectCinemaList();
-		model.addAttribute("cinemaList", cinemaDTO);
-		return "cinemaInfo/cinemaList";
+		return "redirect:cinemaInfo/cinemaList";
 	}
 
 	

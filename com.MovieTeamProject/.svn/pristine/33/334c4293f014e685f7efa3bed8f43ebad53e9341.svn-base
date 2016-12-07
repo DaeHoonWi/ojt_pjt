@@ -12,15 +12,15 @@
 	<table>
 		<form action="cinemaWrite.do" method="post">
 			<tr>
-				<td>나라(1:한국, 2:일본, 3:중국, 4:미국, 5:영국, 6:영국/미국))</td>
+				<td>나라(2,3))</td>
 				<td><input type="text" name="couNum" size="50"></td>
 			</tr>
 			<tr>
-				<td>영화 제목(한글 100자, 영문 200자 제한)/td>
+				<td>영화 제목</td>
 				<td><input type="text" name="cTitle" size="50"></td>
 			</tr>
 			<tr>
-				<td>러닝타임(숫자)</td>
+				<td>러닝타임</td>
 				<td><input type="text" name="cRunningtime" size="50"></td>
 			</tr>
 			<tr>
@@ -29,18 +29,18 @@
 			</tr>
 			<tr>
 				<td>리뷰 수</td>
-				<td>디폴트 0</td>
+				<td>디폴트</td>
 			</tr>
 			<tr>
 				<td>시청연령제한(숫자)</td>
 				<td><input type="text" name="cAge" size="50"></td>
 			</tr>
 			<tr>
-				<td>원본파일명(한글50자, 영문100자 제한)</td>
+				<td>원본파일명</td>
 				<td><input type="text" name="cOriginalFileName" size="50"></td>
 			</tr>
 			<tr>
-				<td>저장파일명(한글100자, 영문200자 제한)</td>
+				<td>저장파일명</td>
 				<td>생략</td>
 			</tr>
 			<tr>
